@@ -1,0 +1,121 @@
+{
+    "editor.inlineSuggest.enabled": true, // Inline suggestions
+    "editor.formatOnSave": false, // no format on save
+    "files.autoSave": "off", // no autosave
+    "editor.wordWrap": "wordWrapColumn", // word wrap on column
+    "latex-workshop.view.pdf.invert": 0.9, // Dark mode for PDF viewer
+    "latex-workshop.view.pdf.viewer": "tab", // PDF viewer in tab
+    "latex-workshop.synctex.afterBuild.enabled": true, // SyncTeX after build
+    "files.eol": "\n", // Unix line endings
+    "files.exclude": { // Exclude files from file explorer
+        "**/desktop.ini": true,
+        "**/Thumb.db": true,
+        "**/Thumbs.db": true
+    },
+    "latex-workshop.intellisense.unimathsymbols.enabled": true, // Enable Latex Workshop Intellisense for Math Symbols
+    "latex-workshop.latex.recipe.default": "latexmk (XeLaTeX)", // Default recipe
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "latexmk2.0",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-xelatex",
+                "--shell-escape",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "lualatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-lualatex",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "latexmk_rconly",
+            "command": "latexmk",
+            "args": [
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipes":[
+        {
+            "name": "latexmk (PDFLaTeX)",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "latexmk (XeLaTeX)",
+            "tools": [
+                "latexmk2.0"
+            ]
+        },
+        {
+            "name": "latexmk (latexmkrc)",
+            "tools": [
+                "latexmk_rconly"
+            ]
+        },
+        {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "lualatexmk"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+}

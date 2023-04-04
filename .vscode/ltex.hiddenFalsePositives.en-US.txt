@@ -1,0 +1,1 @@
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QA Thesis Presented By Submitted to the Department of , University of Massachusetts Lowell, in partial fulfillment of the requirements for the degree of 2023\\E$"}

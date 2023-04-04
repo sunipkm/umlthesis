@@ -1,0 +1,31 @@
+# Ignore everything
+*
+
+# Except latex source files
+!*.tex
+!*.bst
+!*.bib
+!*.cls
+!*.sty
+
+# Add any other files you want to keep
+!*.pdf
+
+# Allow any folders to be included with git
+!*/
+
+# For any subfolders to be included with git, use the following format
+# !relative/path/to/folder/*
+
+# VS Code settings file
+!.vscode/*.json
+!.vscode/ltex*.txt
+
+# License file
+!LICENSE
+
+# README file
+!README.md
+
+# This file!
+!.gitignore
