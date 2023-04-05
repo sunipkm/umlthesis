@@ -14,7 +14,12 @@
 \usepackage{sectsty}
 \usepackage{tocloft}
 \usepackage{fancyhdr}
-\usepackage[square,numbers]{natbib}
+
+%%%%%%%%% Citation style %%%%%%%%%
+\usepackage{natbib} % for author-year citations
+% \usepackage[square,numbers]{natbib} % for numbered citations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{notoccite}
 \usepackage{indentfirst}
 \usepackage{newtxtext}
@@ -24,7 +29,7 @@
 \usepackage{xfrac}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\sectionfont{\large}
+\sectionfont{\Large}
 \subsectionfont{\normalsize}
 \subsubsectionfont{\normalsize}
 
@@ -77,6 +82,22 @@
 }
 \makeatother
 
+\newcommand{\MONTH}{%
+  \ifcase\the\month
+  \or January% 1
+  \or February% 2
+  \or March% 3
+  \or April% 4
+  \or May% 5
+  \or June% 6
+  \or July% 7
+  \or August% 8
+  \or September% 9
+  \or October% 10
+  \or November% 11
+  \or December% 12
+  \fi}
+
 %%%%%%%%%%%%%%%%%%% Fancy arrays %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{array, makecell}
 \renewcommand\theadfont{\normalsize\bfseries}
@@ -108,6 +129,7 @@
 \newcommand{\thesistitle}{Dissertation Title}
 \newcommand{\thesisauthor}{Author Name}
 \newcommand{\thesisyear}{\the\year{}} % replace \the\year{} with the year of submission
+\newcommand{\thesismonth}{\MONTH{}} % replace \MONTH{} with the month of submission
 \newcommand{\thesissup}{Supervisor Name}
 \newcommand{\thesisdept}{Physics and Applied Physics}
 \newcommand{\thesisdegree}{Doctor of Philosophy}
@@ -144,9 +166,13 @@
  
 \bibliographystyle{astroads}
 
+%%%%%%%%%%%%%%%% Optional Appendix Section %%%%%%%%%%%%%%%%%%%
+
 \appendix
 \renewcommand{\thefigure}{\Alph{section}.\arabic{figure}}
 \renewcommand{\thetable}{\Alph{section}.\arabic{table}}
 \include{appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
