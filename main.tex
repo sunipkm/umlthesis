@@ -14,7 +14,7 @@
 \usepackage{sectsty}
 \usepackage{tocloft}
 \usepackage{fancyhdr}
-\usepackage{natbib}
+\usepackage[square,numbers]{natbib}
 \usepackage{notoccite}
 \usepackage{indentfirst}
 \usepackage{newtxtext}
@@ -143,4 +143,10 @@
 \bibliography{bibfile} % bibliography file
  
 \bibliographystyle{astroads}
+
+\appendix
+\renewcommand{\thefigure}{\Alph{section}.\arabic{figure}}
+\renewcommand{\thetable}{\Alph{section}.\arabic{table}}
+\include{appendix}
+
 \end{document}
