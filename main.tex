@@ -14,7 +14,8 @@
 \usepackage{sectsty}
 \usepackage{tocloft}
 \usepackage{fancyhdr}
-
+\usepackage{acronym}
+\usepackage{atbegshi}
 %%%%%%%%% Citation style %%%%%%%%%
 \usepackage{natbib} % for author-year citations
 % \usepackage[square,numbers]{natbib} % for numbered citations
@@ -113,6 +114,14 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%% Fancy Abbreviations %%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\acrotarget}[2]{
+    \acrodef{#1}{#2}
+    \hypertarget{#1}{#1}: {#2}
+} % do not use directly, use `generate_abbrs.py`
+\newcommand{\aclink}[1]{\hyperlink{#1}{\ac{#1}}} % use this in text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%% Depth of ToC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{tocdepth}{5} % table of contents depth
 \setcounter{secnumdepth}{5} % section numbering depth
@@ -160,7 +169,7 @@
 \include{3_results} % results
 \include{4_disc} % discussion
 \include{5_conc} % conclusions
-
+\include{abbr} % abbreviations (generate using `generate_abbrs.py`, and edit the generated file to add descriptions)
 \input{ref} % references (do not edit)
 \bibliography{bibfile} % bibliography file
  
